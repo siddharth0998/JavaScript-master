@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Bud</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <section class="section-center">
+    <!-- form -->
+    <form class="grocery-form">
+      <p class="alert"></p>
+      <h3>To do List</h3>
+      <div class="form-control">
+        <input type="text" id="list" placeholder="e.g. programming" />
+        <button type="button" class="submit-btn" onclick="add()">submit</button>
+      </div>
+    </form>
+    <!-- list -->
+    <div class="grocery-container">
+      <div class="grocery-list" id="list_item">
+        <p class="title">test</p>
+        <div class="btn-container">
+          <!-- edit btn -->
+          <button type="button" class="edit-btn">
+            <i class="fas fa-edit"></i>
+          </button>
+          <!-- delete btn -->
+          <button type="button" class="delete-btn">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+
+      </div>
+      <button class="clear-btn">clear items</button>
+    </div>
+  </section>
+  <!-- javascript -->
+
+  <script>
+
+    var array = [];
+
+    function add() {
+
+      var list = document.getElementById("list").value;
+      array.unshift(list);
+      displayInfo();
+    }
+
+    
+
+    function displayInfo(){
+    var newArray = array.map(function (value) {
+
+      return `<p class="title">${value}</p>
+          <div class="btn-container">
+            <!-- edit btn -->
+            <button type="button" class="edit-btn">
+              <i class="fas fa-edit"></i>
+            </button>
+            <!-- delete btn -->
+            <button type="button" class="delete-btn">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>`
+    })
+  
+    document.getElementById("list_item").innerHTML = newArray.join("");
+  
+  };
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
