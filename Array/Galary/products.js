@@ -140,6 +140,10 @@ document.getElementById("companies").innerHTML = newCompanyName.join("");
 
 function filter_1(data) {
 
+  if(data == 'All'){
+    display(products);
+  }
+
   const filterCompanyName = products.filter(function (value) {
 
     if (value.company == data) {

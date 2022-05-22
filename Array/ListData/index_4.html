@@ -171,29 +171,31 @@ for(let i=0;i<menu.length;i++)
 
 }
 
-document.getElementById("myButton").innerHTML = menu.map(function(value) {
+displayMenu(menu);
+
+ const button = menu.map(function(value) {
 
  return `<button type="button" class="filter-btn" onclick="test('${value.category}');">
          ${value.category}
         </button>`
-}).join("");
+});
 
+const filterButton = [...new Set(button)];
 
+filterButton.unshift(`<button type="button" class="filter-btn" onclick="test('All');">
+         All
+        </button>`);
 
-displayMenu(menu);
-
- 
- 
+document.getElementById("myButton").innerHTML = filterButton.join("");
 
   function test(data)
   { 
 
-    // if(data == '')
-    // {
-    //   displayMenu(menu);
-    // }
-    // else
-    // {}
+    if(data == 'All')
+    {
+      displayMenu(menu);
+    }
+  
     var myFilterData = menu.filter(function(value) {
 
         if(value.category == data)
