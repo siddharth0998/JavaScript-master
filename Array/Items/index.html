@@ -66,20 +66,25 @@
               <i class="fas fa-edit"></i>
             </button>
             <!-- delete btn -->
-            <button type="button" class="delete-btn">
+            <button type="button" class="delete-btn" onclick = "deleteItem('${index}')">
               <i class="fas fa-trash"></i>
             </button>
           </div>`
-    })
+    });
   
     document.getElementById("list_item").innerHTML = newArray.join("");
   
   };
 
+  function deleteItem(index)
+      {
+        // alert(index)
 
+        myItems.splice(index,1);
 
+        displayInfo();
 
-
+      }
 
   </script>
 

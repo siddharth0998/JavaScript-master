@@ -144,6 +144,8 @@ function filter_1(data) {
     display(products);
   }
 
+  alert("dddd");
+
   const filterCompanyName = products.filter(function (value) {
 
     if (value.company == data) {

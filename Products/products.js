@@ -280,10 +280,12 @@ document.getElementById("categories").innerHTML = filterCompany_btn.join("");
 
 function filter_1(data) {
 
-  if(data == 'All') {
+  if (data == 'All') {
+
+    console.log(products);
     display(products);
   }
-  
+  else {
     const filterItems = products.filter(function (value) {
 
       if (value.category == data) {
@@ -293,6 +295,6 @@ function filter_1(data) {
     });
 
     display(filterItems);
-  
+  }
 
 }
