@@ -57,7 +57,7 @@
     
 
     function displayInfo(){
-    var newArray = array.map(function (value) {
+    var newArray = array.map(function (value,index) {
 
       return `<p class="title">${value}</p>
           <div class="btn-container">
@@ -80,7 +80,7 @@
       {
         // alert(index)
 
-        myItems.splice(index,1);
+        array.splice(index,1);
 
         displayInfo();
 

@@ -1,3 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filters</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- products -->
+    <section class="products">
+      <!-- filters -->
+      <div class="filters-container">
+        <!-- search -->
+        <form class="input-form">
+          <input type="text" class="search-input" placeholder="search..." />
+        </form>
+        <!-- categories -->
+        <h5>Company</h5>
+        <article class="companies" id="companies">
+          <button class="company-btn">all</button>
+         
+        </article>
+      </div>
+      <!-- products -->
+      <div class="products-container" id="products">
+        <!-- single product -->
+        <article class="product">
+          <img
+            src="https://dl.airtable.com/.attachments/14ac9e946e1a02eb9ce7d632c83f742f/4fd98e64/product-1.jpeg"
+            class="product-img img"
+            alt=""
+          />
+          <footer>
+            <h5 class="product-name">high-back bench</h5>
+            <span class="product-price">$9.99</span>
+          </footer>
+        </article>
+      </div>
+    </section>
+   
+    <script>
+
 const products = [
   {
     id: 'rec43w3ipXvP28vog',
@@ -98,66 +142,29 @@ const products = [
 ];
 
 
-function display(products) {
+const myData = products.map(function(value,index) {
 
-  var html = '';
-
-  for (let i = 0; i < products.length; i++) {
-    html += `<article class="product">
-  <img src="${products[i].image}"
-    class="product-img img"
-  />
-  <footer>
-    <h5 class="product-name">${products[i].title}</h5>
-    <span class="product-price">${products[i].price}</span>
-  </footer>
-</article>`;
-
-    document.getElementById("items").innerHTML = html;
-
-  }
-}
-
-display(products);
-
-// display company name-start
-
-const companyName = products.map(function (value, index) {
-
-  return `<button class="company-btn" onclick="filter_1('${value.company}')">${value.company}</button>`;
+  return value.company;
 
 });
 
-const newCompanyName = [...new Set(companyName)];
 
-newCompanyName.unshift(`<button class="company-btn" onclick="filter_1('All')">All</button>`);
+const myElemtsn  = myData.map(function(value,index) {
 
-document.getElementById("companies").innerHTML = newCompanyName.join("");
+  return `<button class="company-btn">${value}</button>`
 
-// display company name-end
 
-// function start
+})
 
-function filter_1(data) {
+console.log( myElemtsn.join(""));
 
-  if(data == 'All'){
-    display(products);
-  }
-
-  else{
-  const filterCompanyName = products.filter(function (value) {
-
-    if (value.company == data) {
-      return true;
-    }
-  });
-
-display(filterCompanyName);
-}
-}
-
-// function end
+document.getElementById("companies").innerHTML = myElemtsn.join("");
 
 
 
 
+
+
+    </script>
+  </body>
+</html>
