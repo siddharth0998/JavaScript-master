@@ -3,7 +3,7 @@
     <head>
 
             <script>
-
+// [{firstName: "test",lastName: "patel", city: "pune"},{firstName: "test", lastName : "patel", city:"vadodara"}]
                var employes = [
                     {firstName: "test", lastName : "patel", city: "pune"},
                     {firstName: "samarth", lastName : "shah",city: "Ahemedabad"},
@@ -14,8 +14,14 @@
 
                ]
                 
+               var data = employes.reduce(function(acc,curr){
+                     if(curr.lastName == 'patel'){
+                         acc.push(curr);
+                     }     
+                     return acc;
+               },[])
 
-           
+           console.log(data);
 
             </script>
 

@@ -3263,7 +3263,12 @@
   }
 ];
 
+const outPut = covidData.reduce(function(acc,curr){
+      acc += curr.death;
+      return acc;
+},0)
 
+console.log("Death: " + outPut);
 
 
     </script>
