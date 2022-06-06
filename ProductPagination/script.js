@@ -8,7 +8,7 @@ fetch(url)
 
     array = value;
 
-    function display(array,start,end) {
+    function display(start,end) {
 
       var html = '';
 
@@ -34,7 +34,7 @@ fetch(url)
     var start = 0;
     var end =5;
 
-    display(array,start,end);
+    display(start,end);
 
   
 
@@ -43,25 +43,18 @@ fetch(url)
       button.push(`<li class="page-item"><a class="page-link"  id="test">${i + 1}</a></li>`);
     }
 
-  
-   
-
     document.getElementById("button").innerHTML = button.join("");
 
-   
 
-    
-   var data1 = document.querySelectorAll(".page-link");
+   var data = document.querySelectorAll(".page-link");
 
-   console.log(data1)
-
-   data1.forEach(element => {
+   data.forEach(element => {
       element.addEventListener("click",()=> {
 
         let start = parseInt(element.innerHTML)*5 -5;
         let end = parseInt(element.innerHTML) * 5;
         
-        display(array,start,end)
+        display(start,end)
         
       })
    });

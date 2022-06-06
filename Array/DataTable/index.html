@@ -308,55 +308,71 @@
       }
     ]
 
-    function display(users) {
+    // function display(users) {
+    //   var html = '';
+
+    //   for (let i = 0; i < users.length; i++) {
+    //     html += `<tr>
+    //     <th scope="row">${users[i].id}</th>
+    //     <td>${users[i].name}</td>
+    //     <td>${users[i].username}</td>
+    //     <td>${users[i].email}</td>
+    //     <td>${users[i].address.street}</td>
+    //     <td>${users[i].address.suite}</td>
+    //     <td>${users[i].address.city}</td>
+    //     <td>${users[i].address.zipcode}</td>
+    //     <td>${users[i].address.geo.lat}</td>
+    //     <td>${users[i].address.geo.lng}</td>
+    //     <td>${users[i].phone}</td>
+    //     <td>${users[i].website}</td>
+    //     <td>${users[i].company.name}</td>
+    //     <td>${users[i].company.catchPhrase}</td>
+    //     <td>${users[i].company.bs}</td>
+    //   </tr>`
+    //   }
+
+    //   document.getElementById("list").innerHTML = html;
+    // }
+
+    // display(users);
+
+
+    // function filter_1() {
+
+    //   if (document.getElementById("data").value == '') {
+    //     display(users);
+    //   }
+
+    //   else{
+    //   const filterUsers = users.filter(function (value) {
+
+    //     if (value.address.city == document.getElementById("data").value || value.phone == document.getElementById("data").value ||  value.company.name == document.getElementById("data").value) {
+    //       return true;
+    //     }
+    //   });
+    //   display(filterUsers);
+    // }
+
+    // }
+
+    function display() {
       var html = '';
-
-      for (let i = 0; i < users.length; i++) {
-        html += `<tr>
-        <th scope="row">${users[i].id}</th>
-        <td>${users[i].name}</td>
-        <td>${users[i].username}</td>
-        <td>${users[i].email}</td>
-        <td>${users[i].address.street}</td>
-        <td>${users[i].address.suite}</td>
-        <td>${users[i].address.city}</td>
-        <td>${users[i].address.zipcode}</td>
-        <td>${users[i].address.geo.lat}</td>
-        <td>${users[i].address.geo.lng}</td>
-        <td>${users[i].phone}</td>
-        <td>${users[i].website}</td>
-        <td>${users[i].company.name}</td>
-        <td>${users[i].company.catchPhrase}</td>
-        <td>${users[i].company.bs}</td>
-      </tr>`
+      for (const key in users) {
+        for (const key1 in key) {
+          html += `<tr>
+         <th scope="row">${key[key1]}</th>
+         <td>${key[key1]}</td>
+         <td>${key[key1]}</td>
+         <td>${key[key1]}</td>
+         </tr>`
+        }
       }
-
       document.getElementById("list").innerHTML = html;
     }
 
-    display(users);
+    display();
 
-    // const array = [];
 
-    // document.getElementById("data").innerHTML
-
-    function filter_1() {
-
-      if (document.getElementById("data").value == '') {
-        display(users);
-      }
-
-      else{
-      const filterUsers = users.filter(function (value) {
-
-        if (value.address.city == document.getElementById("data").value || value.phone == document.getElementById("data").value ||  value.company.name == document.getElementById("data").value) {
-          return true;
-        }
-      });
-      display(filterUsers);
-    }
-     
-    }
 
 
   </script>
