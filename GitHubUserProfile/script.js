@@ -5,11 +5,11 @@
 // const search = document.getElementById('search')
 
 
-var url = 'https://api.github.com/users';
+var url = 'https://api.github.com/users/';
 var myData = [];
 
 
-fetch(url)
+fetch(url + document.getElementById("search").value)
     .then(function (value) {
         return value.json();
     }).then(function (value) {

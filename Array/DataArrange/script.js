@@ -12,11 +12,23 @@ var employes = [
 
 // console.log(data);
 
+// var data = employes.reduce(function(acc,curr){
+//       if(curr.city == 'vadodara'){
+//           acc.push(curr.firstName)
+//       }
+//       return acc;
+// },[])
+
+// console.log(data);
+
 var data = employes.reduce(function(acc,curr){
-      if(curr.city == 'vadodara'){
-          acc.push(curr.firstName)
-      }
-      return acc;
+         if(acc[curr.city] == null){
+             acc[curr.city] = 1;
+         }
+         else{
+             acc[curr.city] = ++acc[curr.city];
+         }
+         return acc;
 },[])
 
 console.log(data);
