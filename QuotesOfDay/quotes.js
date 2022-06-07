@@ -26,20 +26,24 @@ const arrayOfQuotes = [
     },
 ];
 
-// var data = Math.floor(Math.random()*10);
+// var data = Math.random();
 // console.log(data);
 
 function display() {
     var ran = Math.floor(Math.random() * 10);
+    console.log(ran)
     if (ran >= arrayOfQuotes.length) {
         ran = ran- 4;
+        document.getElementById("authorOutput").innerHTML = arrayOfQuotes[ran].author;
         document.getElementById("quoteOutput").innerHTML = arrayOfQuotes[ran].quote;
     }
     else {
+        document.getElementById("authorOutput").innerHTML = arrayOfQuotes[ran].author;
         document.getElementById("quoteOutput").innerHTML = arrayOfQuotes[ran].quote;
     }
 }
 
 function generateQuote() {
+  
     display();
 }

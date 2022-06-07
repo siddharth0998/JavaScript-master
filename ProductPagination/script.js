@@ -40,13 +40,14 @@ fetch(url)
 
     var button = [];
     for (let i = 0; i < Math.ceil(array.length / 5); i++) {
-      button.push(`<li class="page-item"><a class="page-link"  id="test">${i + 1}</a></li>`);
+      button.push(`<li class="page-item"><a class="page-link"  id="test">${i+1}</a></li>`);
     }
 
     document.getElementById("button").innerHTML = button.join("");
 
 
    var data = document.querySelectorAll(".page-link");
+  
 
    data.forEach(element => {
       element.addEventListener("click",()=> {
