@@ -358,16 +358,41 @@
     function display() {
       var html = '';
       for (const key in users) {
-        for (const key1 in key) {
-          html += `<tr>
-         <th scope="row">${key[key1]}</th>
-         <td>${key[key1]}</td>
-         <td>${key[key1]}</td>
-         <td>${key[key1]}</td>
-         </tr>`
+
+        html += `<tr>`
+        for (const key1 in users[key]) {
+
+          if (typeof users[key][key1] != 'object') {
+
+            html += `<td>${users[key][key1]}</td>`
+
+            console.log(typeof users[key][key1])
+          }
+          else {
+            for (const key2 in users[key][key1]) {
+
+              if (typeof users[key][key1][key2] != 'object') {
+
+                html += `<td>${users[key][key1][key2]}</td>`
+
+              }
+              else {
+                for (const key3 in users[key][key1][key2]) {
+
+                  html += `<td>${users[key][key1][key2][key3]}</td>`
+
+                }
+              }
+            }
+          }
+
         }
+        html += `</tr>`
+
       }
+
       document.getElementById("list").innerHTML = html;
+
     }
 
     display();
