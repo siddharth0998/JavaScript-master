@@ -5,20 +5,26 @@
 
 // generateJoke()
 
-function display(){
+function display() {
 
-fetch('https://icanhazdadjoke.com')
-.then(function(value){
-    return value.json();
-}).then(function(value){
-   var data = value.results.map(function(value){
-        return `<div id="joke" class="joke">${value.joke}</div>`
-    }).join("");
-    document.getElementById("joke").innerHTML = data;
-})
+    fetch('https://icanhazdadjoke.com', {
+        headers: {
+            Accept: 'application/json',
+        },
+    })
+        .then(function (value) {
+            //console.log(value.json());
+            return value.json();
+        }).then(function (value) {
+            console.log(value);
+            document.getElementById("joke").innerHTML = value.joke;
+        })
 }
 
+display()
 
-function next(){
-   display();
+
+function next() {
+    
+    display();
 }

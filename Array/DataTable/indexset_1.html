@@ -16,9 +16,14 @@
 let myTest = "Patel Divyesh Minesh Test";
 
 let result = myTest.split(" ");
+let data ='';
 for(const key in result){
-    process.stdout.write(result[key][0] + ".");
+   // process.stdout.write(result[key][0] + ".");
+
+    data = data + result[key][0] + "."
 }
+
+console.log(data);
 
 //startwith, endwith, includes-> true/false
 //indexof/lastIndexOf/search-> postion
