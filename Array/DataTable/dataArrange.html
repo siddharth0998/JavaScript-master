@@ -1,0 +1,28 @@
+<script>
+
+//date-> acc, if date if same focus employeeId
+var tickilog = [  
+        {employeeId: "1004", date : "2022-10-03 11:11:12"},
+        {employeeId: "1001", date : "2022-10-06 10:11:12"},
+        {employeeId: "1002", date : "2022-10-06 10:11:12"},
+        {employeeId: "1003", date : "2022-10-04 10:11:12"},
+]
+var data = tickilog.sort(function(a,b){
+        var date1 = new Date(a.date);
+        var date2 = new Date(b.date);
+        var id1 = Number(a.employeeId);
+        var id2 = Number(b.employeeId);
+
+        if(date2 < date1){
+                return 1;
+        }
+        else{
+                if(id2 < id1){
+                        return -1;
+                }
+        }
+})
+
+console.log(data);
+
+</script>

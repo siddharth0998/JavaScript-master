@@ -42,7 +42,6 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
-  --clr-blue-dark: hsl(223, 73%, 26%);
   --clr-black: #222;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
@@ -288,7 +287,7 @@ Grocery List
   transition: var(--transition);
 }
 .edit-btn,
-.delete-btn,.done-btn {
+.delete-btn {
   background: transparent;
   border-color: transparent;
   cursor: pointer;
@@ -307,9 +306,6 @@ Grocery List
 }
 .delete-btn:hover {
   color: var(--clr-red-dark);
-}
-.done-btn {
-  color: var(--clr-blue-dark);
 }
 .clear-btn {
   text-transform: capitalize;

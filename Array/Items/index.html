@@ -7,6 +7,7 @@
   <title>Grocery Bud</title>
   <!-- font-awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -38,13 +39,13 @@
         </div>
 
       </div>
-      <button class="clear-btn">clear items</button>
+      <button class="clear-btn" onclick="clearAll()">clear items</button>
     </div>
   </section>
   <!-- javascript -->
 
   <script>
-
+    var array2 = [];
     var array = [];
 
     function add() {
@@ -54,15 +55,15 @@
       displayInfo();
     }
 
-    
 
-    function displayInfo(){
-    var newArray = array.map(function (value,index) {
 
-      return `<p class="title">${value}</p>
+    function displayInfo() {
+      var newArray = array.map(function (value, index) {
+
+        return `<p class="title">${value}</p>
           <div class="btn-container">
             <!-- edit btn -->
-            <button type="button" class="edit-btn">
+            <button type="button" class="edit-btn" onclick = "editItem('${index}')">
               <i class="fas fa-edit"></i>
             </button>
             <!-- delete btn -->
@@ -70,21 +71,58 @@
               <i class="fas fa-trash"></i>
             </button>
           </div>`
-    });
-  
-    document.getElementById("list_item").innerHTML = newArray.join("");
-  
-  };
+      });
+console.log(newArray);
+        array2 = newArray;
+      document.getElementById("list_item").innerHTML = newArray.join("");
 
-  function deleteItem(index)
-      {
-        // alert(index)
+    };
 
-        array.splice(index,1);
+    function deleteItem(index) {
+      array.splice(index, 1);
+      displayInfo();
+    }
 
-        displayInfo();
+    function clearAll() {
+      array.splice(0);
+      displayInfo();
+    }
 
-      }
+    function editItem(index){
+      
+     if(index !== -1){
+      array2[index] = `<!-- edit btn -->
+            <input type="text" id="edit" placeholder="${array[index]}" />
+            <button type="button" class="edit-btn" onclick = "editItem('${index}')">
+              <i class="fas fa-edit"></i>
+            </button>
+            <!-- delete btn -->
+            <button type="button" class="delete-btn" onclick = "deleteItem('${index}')">
+              <i class="fas fa-trash"></i>
+            </button>
+            <!-- done btn -->
+            <button type="button" class="done-btn" onclick = "doneItem('${index}')">
+              <i class="fa-solid fa-square-check"></i>
+            </button>`
+     }
+     document.getElementById("list_item").innerHTML = array2.join("");
+    }
+
+    function doneItem(index){
+          array2[index] = `<p class="title">${document.getElementById("edit").value}</p>
+          <div class="btn-container">
+            <!-- edit btn -->
+            <button type="button" class="edit-btn" onclick = "editItem('${index}')">
+              <i class="fas fa-edit"></i>
+            </button>
+            <!-- delete btn -->
+            <button type="button" class="delete-btn" onclick = "deleteItem('${index}')">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>`
+
+          document.getElementById("list_item").innerHTML = array2.join("");
+    }
 
   </script>
 

@@ -1,0 +1,17 @@
+
+.card{
+    text-align: center;
+}
+
+.card input{
+    width: 65%;
+    margin-bottom: 10px;
+}
+.card .btn{
+    margin-top: 10px;
+}
+.card .output{
+    width: 65%;
+    height: 25px;
+    margin: auto;
+}
