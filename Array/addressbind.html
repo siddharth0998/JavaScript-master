@@ -1,0 +1,51 @@
+<html>
+
+<head>
+
+
+</head>
+
+<body>
+
+  <div id="address"></div>
+
+  <button id="test">address</button>
+
+  <script>
+
+    const module = {
+      address1: "c-71 motinagar-3",
+      address2: "tarsali vadodara",
+      zipcode: "390 009",
+      getfullAddress: function () {
+        return this.address1 + ' ' + this.address2 + ' ' + this.zipcode;
+      }
+    };
+    
+    const unboundGetX = module.getfullAddress;
+    //console.log(unboundGetX());
+
+    const boundGetX = module.getfullAddress.bind(module);
+    document.getElementById("address").innerHTML = boundGetX();
+
+    // class Address{
+
+    //   constructor(address1,address2,zipCode){
+    //     this.fullAddress = address1 + ' ' + address2 + ' ' + zipCode;
+    //   }
+
+    //   myDisplay = () => {
+    //       document.getElementById("address").innerHTML = this.fullAddress;
+    //   }
+    // }
+
+    // var obj = new Address('tarsali','vadodara','39009');
+    // document.getElementById("test").addEventListener('click',obj.myDisplay);
+
+
+  </script>
+
+</body>
+
+
+</html>
