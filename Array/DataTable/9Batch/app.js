@@ -164,3 +164,14 @@ function checkZipCode(event){
         document.getElementById("zipCode").innerHTML = "invalid zipcode"
     }
 }
+
+function checkAddress(event){
+    var data = document.getElementById("form3Example6c").value;
+
+    if(data.length > 255){
+        document.getElementById("address").innerHTML = "max length is 255 character"
+    }
+    else{
+        document.getElementById("address").innerHTML = ""
+    }
+}
