@@ -1,3 +1,5 @@
+// ************************validation code start****************************
+
 function resUserName(event) {
     var theEvent = event || window.event;
 
@@ -69,14 +71,14 @@ function checkEmail(event) {
     }
 }
 
-function resPassword(event){
+function resPassword(event) {
     var theEvent = event || window.event;
     var key = theEvent.keyCode || theEvent.which;
 
-    if(key != 32){
+    if (key != 32) {
 
     }
-    else{
+    else {
         theEvent.returnValue = false;
     }
 }
@@ -106,72 +108,121 @@ function checkPassword(event) {
         }
     }
 
-    if(capital>0 && small >0 && number >0 && special >0 && (data.length >=6 && data.length<=16)){
+    if (capital > 0 && small > 0 && number > 0 && special > 0 && (data.length >= 6 && data.length <= 16)) {
         document.getElementById("password").innerHTML = ""
     }
-    else{
+    else {
         document.getElementById("password").innerHTML = "password must contain 1 special,1 capital,1 small,1 number character and length should be between 6-16 character"
     }
 
 }
 
-function resConfPassword(event){
+function resConfPassword(event) {
     var theEvent = event || window.event;
     var key = theEvent.keyCode || theEvent.which;
 
-    if(key != 32){
+    if (key != 32) {
 
     }
-    else{
+    else {
         theEvent.returnValue = false;
     }
 }
 
-function checkConfPassword(event){
+function checkConfPassword(event) {
     var pass = document.getElementById("form3Example4c").value;
-    var confPass= document.getElementById("form3Example4cd").value;
-    if( pass === confPass){
+    var confPass = document.getElementById("form3Example4cd").value;
+    if (pass === confPass) {
         document.getElementById("confirmPassword").innerHTML = "";
     }
-    else{
+    else {
         document.getElementById("confirmPassword").innerHTML = "password do not match!";
     }
 }
 
-function resZipCode(event){
+function resZipCode(event) {
     var theEvent = event || window.event;
     var key = theEvent.keyCode || theEvent.which;
     var data = document.getElementById("form3Example5c").value;
-    
 
-    if(key >= 48 && key <= 57 && data.length < 6){
+
+    if (key >= 48 && key <= 57 && data.length < 6) {
 
     }
-    else{
+    else {
         theEvent.returnValue = false;
     }
     console.log(data);
-    
+
 }
 
-function checkZipCode(event){
+function checkZipCode(event) {
     var data1 = document.getElementById("form3Example5c").value;
 
-    if(data1.length == 6){
+    if (data1.length == 6) {
         document.getElementById("zipCode").innerHTML = ""
     }
-    else{
+    else {
         document.getElementById("zipCode").innerHTML = "invalid zipcode"
     }
 }
 
-function checkAddress(event){
+function checkAddress(event) {
     var data = document.getElementById("form3Example6c").value;
 
-    if(data.length > 255){
+    if (data.length > 255) {
         document.getElementById("address").innerHTML = "max length is 255 character"
     }
-    else{
+    else {
         document.getElementById("address").innerHTML = ""
     }
 }
+
+// ****************************validation code ends*************************
+
+
+// ****************************local storage code start******************************
+
+var uname = document.getElementById("form3Example1c").value;
+var cUName = document.getElementById("userName").innerHTML;
+
+var em = document.getElementById("form3Example3c").value;
+var cEm = document.getElementById("email").innerHTML;
+
+var psw = document.getElementById("form3Example4c").value;
+var cPsw = document.getElementById("password").innerHTML;
+
+var conPsw = document.getElementById("form3Example4cd").value;
+var cConPsw = document.getElementById("confirmPassword").innerHTML;
+
+var zC = document.getElementById("form3Example5c").value;
+var cZC = document.getElementById("zipCode").innerHTML;
+
+var addr = document.getElementById("form3Example6c").value;
+var cAddr = document.getElementById("address").innerHTML;
+
+
+
+function saveData() {
+    if ((uname != "") && (cUName == "") && (em != "") && (cEm == "") && (psw != "") && (cPsw == "") && (conPsw != "") && (cConPsw == "") && (zC != "") && (cZC == "") && (addr != "") && (cAddr == "")) {
+         localStorage.setItem("username",uname);
+         localStorage.setItem("email",em);
+         localStorage.setItem("password",psw);
+         localStorage.setItem("confirmpassword",conPsw);
+         localStorage.setItem("zipcode",zC);
+         localStorage.setItem("address",addr);
+         
+    }
+    else if(uname != ""){
+        console.log("executed");
+    }
+  
+}
+
+
+
+
+
+
+
+
