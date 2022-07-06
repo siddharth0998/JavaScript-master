@@ -8,7 +8,7 @@
 
 <body>
 
-
+    <img src="/Array/DataTable/9Batch/webPage1.html" alt="">
 
     <input type="text" placeholder="email" name="email" id="email" />
     <input type="text" placeholder="password" name="password" id="password" />
@@ -33,14 +33,21 @@
                 "Content-type": "application/json; charset=UTF-8"
             }
         }).then(y => y.json()).then(y => {
-            console.log(y);
+            //console.log(y);
             localStorage.setItem("user", JSON.stringify(y));
+            if(y.message != undefined){
+
+            }
+            else{
+                //window.location.href = "/Array/DataTable/9Batch/webPage1.html"
+            }
         })
     }
 
     function loadData() {
 
         var token = JSON.parse(localStorage.getItem("user"));
+        console.log(token);
 
         fetch("http://localhost:4000/accounts", {
             method: "GET",
@@ -50,19 +57,14 @@
             }
         }).then(y => y.json()).then(y => {
             console.log(y);
-            window.location.href = "index.html";
+            
+            //window.location.href = "index.html";
         });
     }
 
 
 
 </script>
-
-<form onsubmit="">
-
-    <input type="button">
-
-</form>
 
 
 </html>

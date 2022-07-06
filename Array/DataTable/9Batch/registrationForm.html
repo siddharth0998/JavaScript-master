@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -33,12 +33,32 @@
                                         <div class="d-flex flex-col align-items-center">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
-                                                <input type="text" id="form3Example1c" class="form-control"
-                                                    onkeypress="resUserName(event)" onchange="checkUserName()" />
-                                                <label class="form-label" for="form3Example1c">UserName</label>
+                                                <input type="text" id="form3Example0c" class="form-control"
+                                                    onkeypress="resTitle(event)" onchange="checkTitle()" />
+                                                <label class="form-label" for="form3Example0c">Title</label>
                                             </div>
                                         </div>
-                                        <p id="userName"></p>
+                                        <p id="title"></p>
+
+                                        <div class="d-flex flex-col align-items-center">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="form3Example1c" class="form-control"
+                                                    onkeypress="resFirstName(event)" onchange="checkFirstName()" />
+                                                <label class="form-label" for="form3Example1c">FirstName</label>
+                                            </div>
+                                        </div>
+                                        <p id="firstName"></p>
+
+                                        <div class="d-flex flex-col align-items-center">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="form3Example2c" class="form-control"
+                                                    onkeypress="resLastName(event)" onchange="checkLastName()" />
+                                                <label class="form-label" for="form3Example2c">LastName</label>
+                                            </div>
+                                        </div>
+                                        <p id="lastName"></p>
 
                                         <div class="d-flex flex-row align-items-center">
                                             <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
@@ -72,7 +92,7 @@
                                         </div>
                                         <p id="confirmPassword"></p>
 
-                                        <div class="d-flex flex-row align-items-center">
+                                        <!-- <div class="d-flex flex-row align-items-center">
                                             <i class="fas fa-map-pin  fa-lg me-3 fa-fw"></i>
                                             <div class="form-outline flex-fill mb-0">
                                                 <input type="text" id="form3Example5c" class="form-control"
@@ -90,9 +110,9 @@
                                                 <label class="form-label" for="form3Example6c">Address</label>
                                             </div>
                                         </div>
-                                        <p id="address"></p>
+                                        <p id="address"></p> -->
 
-                                        <div class="form-check d-flex justify-content-center mb-5">
+                                        <div class="form-check d-flex justify-content-center mb-4">
                                             <input class="form-check-input me-2" type="checkbox" value=""
                                                 id="form2Example3c" />
                                             <label class="form-check-label" for="form2Example3">
@@ -102,6 +122,12 @@
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <button type="button" class="btn btn-primary btn-lg" onclick="saveData()">Register</button>
+                                        </div>
+
+                                        <div class="form-check d-flex justify-content-center mb-4">
+                                        <label class="form-check-label" for="form2Example3a">
+                                            Have already an account? <a href="login.html">Login here</a>
+                                        </label>
                                         </div>
 
                                     </form>
@@ -127,6 +153,6 @@
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 
-<script src="app.js"></script>
+<script src="registration.js"></script>
 
 </html>
