@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+    <input type="text" id="te" onchange="myFunctionChange()" onblur="myFunctionBlur()" />
+
+ <div oncontextmenu="myFunction(event)">
+
+    Press and hold down a key inside the text field to set a red background color. Release the key to set a green background color
+ </div>
+
+<script>
+function myFunction(event) {
+
+    alert("This is the content menu event");
+   event.preventDefault();
+  
+
+
+}
+
+function myFunctionChange()
+{
+    alert("This is the change");
+    document.getElementById("te").style.backgroundColor = "Red";
+}
+
+function myFunctionBlur()
+{
+    alert("This is the blur");
+    document.getElementById("te").style.backgroundColor = "blue";
+
+}
+
+
+</script>
+
+</body>
+</html>

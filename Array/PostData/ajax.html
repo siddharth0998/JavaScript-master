@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+
+    </head>
+    <body>
+
+        <div id="output"></div>
+
+        <script>
+
+    
+const xhttp = new XMLHttpRequest();
+xhttp.open("GET", "https://jsonplaceholder.typicode.com/albums",false);
+xhttp.send();
+  alert(xhttp.responseText);
+
+  alert("d");
+
+
+           
+loadDoc("https://jsonplaceholder.typicode.com/albums", myFunction1);
+
+loadDoc("https://jsonplaceholder.typicode.com/comments", myFunction2);
+
+function loadDoc(url, xyz,) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {xyz(this);}
+  xhttp.open("GET", url);
+  xhttp.send();
+}
+
+function myFunction1(xhttp) {
+  
+    console.log(JSON.parse(xhttp.responseText));
+}
+function myFunction2(xhttp) {
+  
+    console.log(JSON.parse(xhttp.responseText));
+}
+
+        
+            
+
+
+
+
+
+
+        </script>
+
+
+    </body>
+
+
+</html>

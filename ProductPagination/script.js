@@ -8,7 +8,7 @@ fetch(url)
 
     array = value;
 
-    function display(start,end) {
+    function display(start, end) {
 
       var html = '';
 
@@ -32,41 +32,41 @@ fetch(url)
     }
 
     var start = 0;
-    var end =5;
+    var end = 5;
 
-    display(start,end);
+    display(start, end);
 
-  
+
 
     var button = [];
     for (let i = 0; i < Math.ceil(array.length / 5); i++) {
-      button.push(`<li class="page-item"><a class="page-link"  id="test">${i+1}</a></li>`);
+      button.push(`<li class="page-item"><a class="page-link"  id="test">${i + 1}</a></li>`);
     }
 
     document.getElementById("button").innerHTML = button.join("");
 
 
-   var data = document.querySelectorAll(".page-link");
-  
+    var data = document.querySelectorAll(".page-link");
 
-   data.forEach(element => {
-      element.addEventListener("click",()=> {
 
-        let start = parseInt(element.innerHTML)*5 -5;
+    data.forEach(element => {
+      element.addEventListener("click", () => {
+
+        let start = parseInt(element.innerHTML) * 5 - 5;
         let end = parseInt(element.innerHTML) * 5;
-        
-        display(start,end)
-        
+
+        display(start, end)
+
       })
-   });
-    
+    });
+
 
   })
 
-  
 
 
-  
+
+
 
 
 
