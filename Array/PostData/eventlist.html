@@ -4,21 +4,26 @@
     </head>
     <body>
 
-        <!-- <div>to detect the mobile device or resolution</div> -->
+        <div id="new"></div>
         
             <div id="demo">This is my old content</div>
             <script>
 
-window.addEventListener("resize", function(e){
-  
+window.addEventListener("resize", function(e){  
    myFunction(e);
-
 
 });
 
 function myFunction(e)
 {
-
+   var newHeight = window.innerHeight;
+   var newWidth = window.innerWidth;
+    if(newHeight <=850 && newWidth <= 400){
+        document.getElementById("new").innerHTML = "please use our mobile application."
+    }
+    else{
+        document.getElementById("new").innerHTML = ""
+    }
 }
 
             </script>
