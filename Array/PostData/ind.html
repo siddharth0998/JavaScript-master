@@ -1,0 +1,30 @@
+<html>
+
+
+    <body>
+
+        <label>ele</label>
+        <input type="checkbox" value="ele"  onclick="myTest(event)" />
+       
+        <label>test</label>
+        <input type="checkbox" value="test"  onclick="myTest(event)" />
+        <label>test1</label>
+        <input type="checkbox" value="test1"  onclick="myTest(event)"/>
+
+        <script>
+
+            function myTest(e)
+            {
+                console.log(e);
+                console.log(e.target.checked);
+                console.log(e.target.value);
+
+            }
+
+
+        </script>
+
+    </body>
+
+
+</html>
