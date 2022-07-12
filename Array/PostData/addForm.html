@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="addFormStyle.css">
+</head>
+
+<body>
+    <button type="button" onclick="addMore()">ADD MORE</button>
+    <div class="container" id="container">
+
+        <div class="card" id="1">
+            <div class="row1">
+                <div class="col1">
+                    <h1>Education</h1>
+                </div>
+                <div class="col2">
+                    <button onclick="delete1(event)">Remove</button>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="col1">
+                    <h2> University/School</h2>
+                </div>
+                <div class="col2">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="row3">
+                <div class="col1">
+                    <h2>Education level</h2>
+                </div>
+                <div class="col2">
+                    <select>
+                        <option value="0">Select Degree</option>
+                        <option value="1">B.E/B.Tech</option>
+                        <option value="2">Bsc/Msc</option>
+                        <option value="3">MBA</option>
+                        <option value="4">MBBS</option>
+                        <option value="5">BCA/MCA</option>
+                        <option value="6">B.Com/M.Com</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row4">
+                <div class="col1">
+                    <h2>Percentage</h2>
+                </div>
+                <div class="col2">
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="btn2" type="button" onclick="saveData()">Save</button>
+</body>
+
+<script>
+    var i = 1;
+    const addMore = () => {
+        const data = document.getElementById("container");
+        
+        data.innerHTML += `<div class="card" id="${++i}">
+            <div class="row1">
+                <div class="col1">
+                    <h1>Education</h1>
+                </div>
+                <div class="col2">
+                    <button onclick="delete1(event)">Remove</button>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="col1">
+                    <h2> University/School</h2>
+                </div>
+                <div class="col2">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="row3">
+                <div class="col1">
+                    <h2>Education level</h2>
+                </div>
+                <div class="col2">
+                    <select>
+                        <option value="0">Select Degree</option>
+                        <option value="1">B.E/B.Tech</option>
+                        <option value="2">Bsc/Msc</option>
+                        <option value="3">MBA</option>
+                        <option value="4">MBBS</option>
+                        <option value="5">BCA/MCA</option>
+                        <option value="6">B.Com/M.Com</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row4">
+                <div class="col1">
+                    <h2>Percentage</h2>
+                </div>
+                <div class="col2">
+                    <input type="text">
+                </div>
+            </div>
+        </div>`
+        const x = document.getElementById("container").childNodes;
+        // console.log(x.length);
+        // console.log(x);
+    }
+
+    const delete1 = (ev) => {
+        ev.target.parentNode.parentNode.parentNode.remove();
+    }
+
+    // console.log(x[3].tagName);
+
+    // console.log(document.getElementById("1").childNodes[3].value);
+
+
+    const saveData = () => {
+        const array = [];
+        const x = document.getElementById("container").childNodes;
+        for (let i = 0; i < x.length - 2; i++) {
+                const card = document.getElementById(i+1);
+                const university = card.childNodes[3].childNodes[3].childNodes[1].value;
+                const select = card.childNodes[5].childNodes[3].childNodes[1];
+                const degree = select.options[select.selectedIndex].text;
+                const percentage = card.childNodes[7].childNodes[3].childNodes[1].value;
+                
+                array.push({
+                    University: university,
+                    Degree: degree,
+                    Percentage: percentage
+                })
+            }
+            console.log(array);
+    }
+
+
+</script>
+
+<noscript>
+
+    // if (x[3] == undefined) {
+        //     const card = document.getElementById("1");
+        //     const university = card.childNodes[3].childNodes[3].childNodes[1].value;
+        //     const select = card.childNodes[5].childNodes[3].childNodes[1];
+        //     const degree = select.options[select.selectedIndex].text;
+        //     const percentage = card.childNodes[7].childNodes[3].childNodes[1].value;
+            
+        //     array.push({
+        //         University: university,
+        //         Degree: degree,
+        //         Percentage: percentage
+        //     })
+        //     console.log(array);
+        // }
+        // else {
+        //     for (let i = 0; i < x.length - 2; i++) {
+        //         const card = document.getElementById(i+1);
+        //         const university = card.childNodes[3].childNodes[3].childNodes[1].value;
+        //         const select = card.childNodes[5].childNodes[3].childNodes[1];
+        //         const degree = select.options[select.selectedIndex].text;
+        //         const percentage = card.childNodes[7].childNodes[3].childNodes[1].value;
+                
+        //         array.push({
+        //             University: university,
+        //             Degree: degree,
+        //             Percentage: percentage
+        //         })
+        //     }
+        //     console.log(array);
+        // }
+
+</noscript>
+
+</html>
+
+
+  

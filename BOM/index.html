@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+</head>
+
+
+<body>
+    <div id="para"></div>    
+    
+</body>
+
+<script>
+
+console.log(navigator.language);
+
+const number = 123456.789;
+
+console.log(number.toLocaleString(navigator.language));
+
+const cook = navigator.cookieEnabled;
+
+if(cook == false){
+    document.getElementById("para").innerHTML = "please enabled your cookies in browsor"
+}
+else{
+    document.getElementById("para").innerHTML = ""
+}
+
+
+
+</script>
+
+<noscript>
+     <h1>"please enabled javascript in your browsor"</h1>   
+    
+</noscript>
+
+</html>

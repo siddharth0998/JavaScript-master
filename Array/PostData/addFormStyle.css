@@ -1,0 +1,44 @@
+.card{
+    margin: 15px 0 15px 0;
+    width: 40%;
+    background: #189c9c;
+}
+.row1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.row1 .col1{
+
+}
+.row1 .col2{
+
+}
+.row2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.row3{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.row3 .col1{
+
+}
+.row4{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.btn2{
+    position: relative;
+    left: 19%;
+    background: #059410;
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    font-size: 15px;
+
+}

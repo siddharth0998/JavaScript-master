@@ -10,12 +10,12 @@ const display = () => {
       dataArray = x;
       displayMyHtml(x, true);
     })
-}
+  }
 
 const displayMyHtml = (dataArray, isload) => {
 
   const data = dataArray.map((value) => {
-    return `<article class="product" ondblclick="showDetail(event)" id="${value.id}">
+    return     `<article class="product" onclick="showDetail(event)" id="${value.id}">
 <img src="${value.image}" class="product-img img" alt="" />
 <footer>
     <h5 class="product-name">${value.title}</h5>
@@ -41,9 +41,38 @@ const displayMyHtml = (dataArray, isload) => {
 
 display();
 
-// const showDetail = (e) => {
-//   console.log(e.target);
-// }
+
+
+
+
+const showDetail = (e) => {
+  var dataDescription = {};
+  const id1 = e.target.parentNode.id;
+
+  if(id1 == ""){
+    const id2 = e.target.parentNode.parentNode.id;
+    
+    dataDescription[id2] = dataArray[id2-1].description;
+    //alert(dataDescription[id2]);
+    const para = document.createElement("div");
+    para.innerText = dataDescription[id2];
+    document.getElementById(id2).appendChild(para); 
+  }
+  else{
+    dataDescription[id1] = dataArray[id1-1].description;
+    //alert(dataDescription[id1]);
+    const para = document.createElement("div");
+    para.innerText = dataDescription[id1];
+    document.getElementById(id1).appendChild(para); 
+  }
+
+  
+}
+
+
+
+
+
 
 function filter_info(e) {
   var array = []
@@ -62,10 +91,9 @@ function filter_info(e) {
     displayMyHtml(myfilterData, false);
 
   }
-  else {
+  else {z
     displayMyHtml(dataArray, false);
   }
 
 }
-
 

@@ -135,6 +135,10 @@ Products
   max-width: var(--max-width);
 }
 
+/* .product:hover{
+  transform: scale(1.3);
+} */
+
 .filters-container h5 {
   font-weight: 500;
   margin: 1.5rem 0 0.5rem;
