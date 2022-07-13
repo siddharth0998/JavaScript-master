@@ -79,6 +79,7 @@ function filter_info(e) {
   var ty = document.querySelectorAll('.inputcheck:checked');
 
   if (ty.length > 0) {
+    console.log(ty);
     for (var i = 0; i < ty.length; i++) {
       array.push(ty[i].defaultValue)
     }
