@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+
+<script>
+
+const array = [];
+
+function Person(userId, id, title, completed) {
+    this.userId = userId;
+    this.id = id;
+    this.title = title;
+    this.completed = completed;
+}
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+.then(y => y.json())
+.then(y => {
+    for(let i=0; i<y.length; i++){
+         const item = new Person(y[i].userId, y[i].id, y[i].title, y[i].completed);
+         array.push(item);
+    }
+})
+
+console.log(array);
+
+
+
+</script>
+</html>

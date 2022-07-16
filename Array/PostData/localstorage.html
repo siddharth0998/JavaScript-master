@@ -1,0 +1,80 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <input type="text" name="fname" id="fname" />
+    <input type="text" name="lname" id="lname" />
+    <input type="hidden" name="editindex" id="editindex" value="-1" />
+    <input type="button" value="Save" onclick="saveEmployee()" />
+
+    <div id="display"></div>
+
+    <script>
+
+        function saveEmployee() {
+            var employee = JSON.parse(localStorage.getItem("employess")) || [];
+            var myhiddenindex = document.getElementById("editindex").value;
+
+            if (myhiddenindex == "-1") {
+                var obj = {
+                    fname: document.getElementById("fname").value,
+                    lname: document.getElementById("lname").value
+                };
+                employee.push(obj);
+                localStorage.setItem("employess", JSON.stringify(employee));
+            }
+            else {
+                var employee1 = JSON.parse(localStorage.getItem("employess"));
+
+                employee1[myhiddenindex].fname = document.getElementById("fname").value;
+                employee1[myhiddenindex].lname = document.getElementById("lname").value;
+
+                localStorage.setItem("employess", JSON.stringify(employee1));
+
+                document.getElementById("editindex").value = -1;
+            }
+            displayEmployee();
+        }
+
+        function displayEmployee() {
+            var employee = JSON.parse(localStorage.getItem("employess"));
+
+            document.getElementById("display").innerHTML= employee.map((value, index) => {
+                    return (`<div>${value.fname} ${value.lname} <button onclick="editValue(${index})">edit</button><button onclick="deletevalue(${index})">delete</button></div>`)
+                }).join(" ");
+        }
+
+        function editValue(value) {
+
+            var employee = JSON.parse(localStorage.getItem("employess"));
+            var myobj = employee[value];
+
+            document.getElementById("fname").value = myobj.fname;
+            document.getElementById("lname").value = myobj.lname;
+            document.getElementById("editindex").value = value;
+
+        }
+
+        function deletevalue(index) {
+            var employee = JSON.parse(localStorage.getItem("employess"));
+            employee.splice(index, 1);
+            localStorage.setItem("employess", JSON.stringify(employee));
+
+            displayEmployee();
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+
+</html>
