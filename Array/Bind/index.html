@@ -1,0 +1,59 @@
+<html>
+
+
+    <head>
+
+
+    </head>
+    <body>
+
+        <div id="display" ></div>
+
+        <input type="button" style="color:red" value="test" name="another test"/>
+
+        <button name="Test" id="test">Click</button>
+       
+
+        <script>
+
+            class Myoperation
+            {
+
+                constructor(name)
+                {
+
+                    this.name = name;
+                    this.display = this.display.bind(this);
+                }
+
+                display = function(params) {
+
+                    document.getElementById("display").innerText
+                     = this.name
+                    
+                }
+
+                displayArrow = ()=> {
+
+                    document.getElementById("display").innerText = this.name
+
+                }
+
+
+
+            }
+
+            var obj = new Myoperation("myArrow");
+
+            document.getElementById("test").
+            addEventListener("click",obj.display);
+            document.getElementById("test1").
+            addEventListener("click",obj.display);
+
+            
+        </script>
+
+    </body>
+
+
+</html>

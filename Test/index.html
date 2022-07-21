@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <title>Document</title>
+</head>
+<body>
+    <table class="table" id="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">country</th>
+            <th scope="col">slogan</th>
+            <th scope="col">head_quaters</th>
+            <th scope="col">website</th>
+            <th scope="col">established</th>
+          </tr>
+        </thead>
+        <tbody id="list">
+          <tr>
+            <th scope="row">1</th>
+            <td>sid</td>
+            <td>india</td>
+            <td>satya</td>
+            <td>guj</td>
+            <td>www.google.com</td>
+            <td>1998</td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+
+<script>
+
+var html = '';
+
+fetch("https://api.instantwebtools.net/v1/airlines")
+.then(y => y.json())
+.then( y => {
+  // console.log(y);
+    for (const key in y) {
+      html += `<tr>`
+        for (const key1 in y[key]){
+              // console.log(y[key][key1]);
+            html += `<td>${y[key][key1]}</td>`
+        }
+        html += `</tr>`
+    }
+
+    document.getElementById("list").innerHTML = html;
+})
+
+
+
+
+
+</script>
+</html>

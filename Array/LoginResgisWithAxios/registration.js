@@ -216,15 +216,11 @@ function saveData() {
             confirmPassword: conPsw,
             acceptTerms: true
         }
-        fetch("http://localhost:4000/accounts/register", {
-            method: "POST",
-            body: JSON.stringify(obj),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        }).then(y => y.json()).then(y => {
+
+         axios.post("http://localhost:4000/accounts/register",obj)
+         .then( y => {
             window.location.href = "login.html"
-        })
+         })
         
     }
 

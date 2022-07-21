@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+</head>
+<body onload="loadData()">
+    <h1>Login successfully done</h1>
+    <h1>welcome to homepage</h1>
+</body>
+
+<script>
+
+async function loadData() {
+
+var token = JSON.parse(localStorage.getItem("user")).jwtToken;
+console.log(token);
+const config = {
+    method: 'get',
+    url: 'http://localhost:4000/accounts',
+    headers: {
+        "Content-type": "application/json; charset=UTF-8",
+        "Authorization": `Bearer  ${token}` 
+    }
+}
+  const getData = await axios(config)
+
+  console.log(getData.data);
+
+
+}
+
+</script>
+
+</html>
