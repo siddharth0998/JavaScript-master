@@ -1,0 +1,58 @@
+<html>
+
+
+<head>
+
+
+</head>
+    <body>
+
+        <div id="display"></div>
+
+        <script>
+
+                class FetchData
+                {
+
+                    constructor(url,method,data)
+                    {
+
+                        this.url = url;
+                        this.method= method;
+                        this.data = data;
+
+
+                    }
+
+                 fetchMyData = async function()
+                    {
+                    
+                    var d = await   fetch(this.url, {
+                        method : this.method
+                       });
+
+
+                       return await d.json();
+
+                   
+                    }
+
+
+
+                }
+
+                    var ob = new FetchData("https://jsonplaceholder.typicode.com/comments","get");
+
+
+                    console.log( ob.fetchMyData().then(y=> {
+                        console.log(y);
+                    }));
+
+
+
+        </script>
+
+
+    </body>
+
+</html>

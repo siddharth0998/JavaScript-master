@@ -1,0 +1,53 @@
+<html>
+
+    <head>
+
+
+    </head>
+    <body>
+
+        <script>
+
+          
+
+         
+
+const colorizeWordle = (guessedWord, hiddenWord) => {
+  
+  var colors ="";
+let hint = false;
+     for(let i=0;i<guessedWord.length;i++)
+       {
+       if(hiddenWord.indexOf(guessedWord[i],i) == guessedWord.indexOf(guessedWord[i],i))
+         {
+           colors +="G";
+         }
+         
+         else if(hiddenWord.indexOf(guessedWord[i]) >=0 && hint == false)  
+           
+           {
+              colors +="Y";
+              hint = true;
+           }
+         else
+           {
+              colors +="B";
+             
+           }
+         
+        
+       }
+console.log(colors)
+
+  return colors;
+};
+
+
+colorizeWordle("iiwis", "swift")
+
+                </script>
+
+    </body>
+
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+    <body>
+        <h1>JavaScript Modules</h1>
+        
+        <p id="demo"></p>
+        
+        <script type="module">
+            
+            fetch("https://jsonplaceholder.typicode.com/albums")
+
+            .then(y=> {
+                return y.text()
+            }).then(y=> {
+
+                console.log(y.firstName)
+            }).catch(y=> {
+                var d = 1;
+                var p = d.toLowerCase();
+
+             throw "This is the error";
+                
+            }).finally(y=> {
+
+                alert("This is the data");
+            })
+
+
+
+        </script>
+        
+        </body>
+
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+    <head>
+
+
+    </head>
+    <body>
+
+        <script>
+
+         var a= [3,5,6];
+
+         var b = [...a];
+
+         var employee = {
+
+            firstName : "Test",
+            lastName : "another test"
+         };
+
+         employee.firstName =":ddd"
+         var newEmployee = {
+            ...employee,
+
+            firstName : "I am javascript"
+        
+         };
+
+         console.log(newEmployee);
+         console.log(employee);
+
+
+         b[0]=4;
+
+         console.log(a);
+         console.log(b);
+
+            
+        </script>
+
+
+    </body>
+
+
+</html>

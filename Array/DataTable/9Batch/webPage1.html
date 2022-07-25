@@ -57,7 +57,10 @@
         
         let jsonData = getData.json();
         
-        console.log(jsonData);
+        jsonData.then(y=>{
+            console.log(y);
+            console.log(y[0]);
+        });
     }
 
 
