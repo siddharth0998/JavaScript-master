@@ -46,7 +46,7 @@ var data = [
 
 //     if(data[i].firstName == data[i+1].firstName)
 // }
-data = data.filter((value, index, self) =>
+data = data.filter((value, index, self) => 
     index === self.findIndex((t) => (
         t.firstName === value.firstName && t.lastName === value.lastName && t.address.city === value.address.city && t.address.state === value.address.state
     ))
